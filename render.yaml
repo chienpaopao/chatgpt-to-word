@@ -1,9 +1,8 @@
 services:
   - type: web
     name: chatgpt-to-word
-    runtime: python
-    buildCommand: pip install -r requirements.txt && apt-get install -y pandoc || true
-    startCommand: gunicorn app:app
+    runtime: docker
+    plan: free
     envVars:
-      - key: PYTHON_VERSION
-        value: 3.11.0
+      - key: PORT
+        value: 8080
