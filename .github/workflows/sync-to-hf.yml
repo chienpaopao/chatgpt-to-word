@@ -19,6 +19,6 @@ jobs:
         run: |
           git config user.email "action@github.com"
           git config user.name "GitHub Action"
-          git push \
+          git push --force \
             https://BaoGe-math:${HF_TOKEN}@huggingface.co/spaces/BaoGe-math/chatgpt-to-word \
             main
