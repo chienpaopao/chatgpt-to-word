@@ -1,6 +1,5 @@
 FROM python:3.11-slim
 
-# Install pandoc
 RUN apt-get update && \
     apt-get install -y --no-install-recommends pandoc && \
     rm -rf /var/lib/apt/lists/*
@@ -12,7 +11,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY app.py .
 
-EXPOSE 8080
-ENV PORT=8080
+EXPOSE 7860
+ENV PORT=7860
 
-CMD gunicorn --bind 0.0.0.0:$PORT app:app
+CMD gunicorn --bind 0.0.0.0:7860 app:app
